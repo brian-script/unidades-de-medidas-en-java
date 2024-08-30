@@ -86,6 +86,7 @@ public class unidades{
 			} catch (InputMismatchException e) {
 
 				System.out.println("solo numeros");
+				continue;
 
 			}
 
