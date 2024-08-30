@@ -41,24 +41,54 @@ public class unidades{
 		System.out.println("*** PROGRAMA DE CONVERSION DE UNIDADES ***\n");
 
 		System.out.println("Elige una de las opciones: \n1.- mm a cm \n2.- cm a mm \n3.- cm a m \n4.- m a cm \n5.- m a km \n6.- km a m");
-		System.out.print("Ingresa una de las opciones: ");
-		int eleccion = teclado.nextInt();
-		System.out.print("Ingresa un valor: ");
-		double num = teclado.nextDouble();
 
-		if (eleccion == 1){
-			System.out.println("El resultado es: " + conversion.mm_a_cm(num) + "cm");
-		}else if (eleccion == 2){
-			System.out.println("El resultado es: " + conversion.cm_a_mm(num) + "mm");
-		}else if (eleccion == 3){
-			System.out.println("El resultado es: " + conversion.cm_a_m(num) + "m");
-		}else if (eleccion == 4){
-			System.out.println("El resultado es: " + conversion.m_a_cm(num) + "cm");
-		}else if (eleccion == 5){
-			System.out.println("El resultado es: " + conversion.m_a_km(num) + "km");
-		}else if (eleccion == 6){
-			System.out.println("El resultado es: " + conversion.km_a_m(num) + "m");
-		}
+		while (true){
 		
+			try {
+
+				System.out.print("Ingresa una de las opciones: ");
+				int eleccion = teclado.nextInt();
+
+				if (eleccion == 0) {
+	
+					System.out.println("Saliendo del Programa");
+					break;
+
+				}
+
+				System.out.print("Ingresa un valor: ");
+				double num = teclado.nextDouble();
+
+				switch (eleccion) {
+                    case 1:
+                        System.out.println("El resultado es: " + conversion.mm_a_cm(num) + " cm");
+                        break;
+                    case 2:
+                        System.out.println("El resultado es: " + conversion.cm_a_mm(num) + " mm");
+                        break;
+                    case 3:
+                        System.out.println("El resultado es: " + conversion.cm_a_m(num) + " m");
+                        break;
+                    case 4:
+                        System.out.println("El resultado es: " + conversion.m_a_cm(num) + " cm");
+                        break;
+                    case 5:
+                        System.out.println("El resultado es: " + conversion.m_a_km(num) + " km");
+                        break;
+                    case 6:
+                        System.out.println("El resultado es: " + conversion.km_a_m(num) + " m");
+                        break;
+                    default:
+                        System.out.println("Opción no válida.");
+                        break;
+                }
+			} catch (InputMismatchException e) {
+
+				System.out.println("solo numeros");
+
+			}
+
+		}
 	}
+
 }
